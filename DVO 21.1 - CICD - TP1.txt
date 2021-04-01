@@ -1,0 +1,38 @@
+A. A propos des hooks
+1. Les crochets sont tous stockés dans le sous-répertoire hooks du répertoire Git. Dans la plupart des projets, c'est . git/hooks .
+2. Tout langue, compilée ou interprétée peut être utilisée (à condition que l'interprète approprié soit disponible sur le système).
+3. Hook utiliser pour attraper les commits (avant le commit) est le pre-commit hook
+
+B. Ecrire un hook
+1/ i/
+ # -- coding: utf-8 --
+from flask import Flask
+
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+1/ii/
+# -- coding: utf-8 --
+from flask import Flask
+
+
+app = Flask(__name__)
+
+
+@app.route("/<name>")
+def hello():
+    return "Hello World!"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+2/
