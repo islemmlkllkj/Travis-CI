@@ -1,0 +1,7 @@
+default:
+  image: docker
+
+install build:
+  script:
+    -docker build -t islemM/app .
+    -docker run -it islemM/app pylint Service.py
